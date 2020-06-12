@@ -11,7 +11,7 @@
 
 **Problem sets**
 
-[ ] We need to determine our first set of problems
+- [ ] We need to determine our first set of problems
 
 ### Source Code
 
