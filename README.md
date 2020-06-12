@@ -2,17 +2,11 @@
 
 ## General Relativity
 
-Textbooks
+**Textbooks**
 * Gravity: An Introduction to Einstein's General Relativity by James B. Hartle
 * A General Relativity Workbook by Thomas A. Moore
 
-### Problems 
-=
-
-Problem sets
+**Problems**
 - [ ] We need to determine our first set of problems
 
-### Source Code 
-=
-
-Code for simulations
+**Source Code**
