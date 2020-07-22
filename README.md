@@ -7,6 +7,6 @@
 * A General Relativity Workbook by Thomas A. Moore
 
 **[Problems](General_Relativity/problems)**
-- [ ] [Problem Set 1](General_Relativity/problems/problem_set_1.md)
+- [ ] [Problem Set 1](General_Relativity/problems/problem_set_1.ipynb)
 
 **[Source Code](General_Relativity/src)**
