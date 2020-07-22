@@ -7,6 +7,6 @@
 * A General Relativity Workbook by Thomas A. Moore
 
 **[Problems](General_Relativity/problems)**
-- [ ] We need to determine our first set of problems
+- [ ] [Problem Set 1](General_Relativity/problems/problem_set_1.md)
 
 **[Source Code](General_Relativity/src)**
