@@ -5,6 +5,52 @@ Started on July $16^{th}$, 2020. These problems are a simple review of the basic
 * 3.1 (pg. 45)
 > A free particle is moving in an inertial frame (x,y,z) in the x-y plane on a trajectory x = d, y = ut, where d and v are constants in time. Consider a rectangular frame (x',y',z') rotating with respect to the inertial frame with an angular velocity $\omega$ about a common z-axis (z'= z). What are the equations of motion obeyed by x'(t), y'(t), and z'(t) in the rotating frame? Sketch the trajectory of the particle in the x'-y' plane and show explicitly that it satisfies these equations of motion.
 
+$$\frac{d}{dt}\frac{\partial L}{\partial q}-\frac{\partial L}{\partial \dot{q}}=0$$
+$$x'=cos(\omega t)(x-d)+sin(\omega t)(y-ut)$$
+$$y'=-sin(\omega t)(x-d)+cos(\omega t)(y-ut)$$
+
+$$\dot{x}'=cos(\omega t)\dot{x}-sin(\omega t)\omega x+sin(\omega t)\omega d+cos(\omega t)\omega y+sin(\omega t)\dot{y}-cos(\omega t)\omega ut-sin(\omega t)u$$
+$$\dot{x}'=cos(\omega t)[\dot{x}+\omega y-\omega ut]+sin(\omega t)[\dot{y}+\omega d-\omega x-u]$$
+$$\dot{y}'=-sin(\omega t)\dot{x}-cos(\omega t)\omega x+cos(\omega t)\omega d+cos(\omega t)\dot{y}-sin(\omega t)\omega y+sin(\omega t)\omega ut-cos(\omega t)u$$
+$$\dot{y}'=cos(\omega t)[\dot{y}+\omega d-\omega x-u]+sin(\omega t)[\omega ut-\dot{x}-\omega y]$$
+<br>
+$$L=\frac{1}{2}mv^2=\frac{1}{2}m\sqrt{\dot{x}^{2'}+\dot{y}^{2'}}$$
+$$L=\frac{1}{2}m\sqrt{(cos(\omega t)[\dot{x}+\omega y-\omega ut]+sin(\omega t)[\dot{y}+\omega d-\omega x-u])^{2'}+(cos(\omega t)[\dot{y}+\omega d-\omega x-u]+sin(\omega t)[\omega ut-\dot{x}-\omega y])^{2'}}$$
+
+* x'
+$$\frac{d}{dt}\frac{\partial L}{\partial x}=\frac{d}{dt}\frac{\partial}{\partial x}[\frac{1}{2}m\sqrt{(cos(\omega t)[\dot{x}+\omega y-\omega ut]+sin(\omega t)[\dot{y}+\omega d-\omega x-u])^{2'}+(cos(\omega t)[\dot{y}+\omega d-\omega x-u]+sin(\omega t)[\omega ut-\dot{x}-\omega y])^{2'}}]$$
+$$\frac{\partial L}{\partial \dot{x}}=\frac{\partial }{\partial \dot{x}}[\frac{1}{2}m\sqrt{(cos(\omega t)[\dot{x}+\omega y-\omega ut]+sin(\omega t)[\dot{y}+\omega d-\omega x-u])^{2'}+(cos(\omega t)[\dot{y}+\omega d-\omega x-u]+sin(\omega t)[\omega ut-\dot{x}-\omega y])^{2'}}]$$
+* y'
+$$\frac{d}{dt}\frac{\partial L}{\partial x}=\frac{d}{dt}\frac{\partial}{\partial y}[\frac{1}{2}m\sqrt{(cos(\omega t)[\dot{x}+\omega y-\omega ut]+sin(\omega t)[\dot{y}+\omega d-\omega x-u])^{2'}+(cos(\omega t)[\dot{y}+\omega d-\omega x-u]+sin(\omega t)[\omega ut-\dot{x}-\omega y])^{2'}}]$$
+$$\frac{\partial L}{\partial \dot{x}}=\frac{\partial }{\partial \dot{y}}[\frac{1}{2}m\sqrt{(cos(\omega t)[\dot{x}+\omega y-\omega ut]+sin(\omega t)[\dot{y}+\omega d-\omega x-u])^{2'}+(cos(\omega t)[\dot{y}+\omega d-\omega x-u]+sin(\omega t)[\omega ut-\dot{x}-\omega y])^{2'}}]$$
+* $z'(t)=z$
+
+
+Stopped after creating L, may use code to solve.
+
+
+```python
+from sympy import *
+import numpy as np
+
+m = "mass"
+w = "omega"
+d = "x_constant"
+u = "y_constant"
+
+L = (1/2)*m*sqrt((-sin(w*t)*w*d+cos(w*t)w*u*t+sin(w*t)*u)**2+(-cos(w*t)*w*d-sin(w*t)w*u*t+cos(w*t)*u)**2)
+
+dt_pL = [1,1]
+```
+
+
+      File "<ipython-input-1-11096b829e89>", line 9
+        L = (1/2)*m*sqrt((-sin(w*t)*w*d+cos(w*t)w*u*t+sin(w*t)*u)**2+(-cos(w*t)*w*d-sin(w*t)w*u*t+cos(w*t)*u)**2)
+                                                ^
+    SyntaxError: invalid syntax
+
+
+
 * 3.5 (pg. 46)
 > Conside the functional $$S[x(t)] = \int_{0}^{T} [(\frac{dx(t)}{dt})^2 + x^2(t)]dt.$$ <br>
 Find the curve x(t) satisfying the conditions $$x(0) = 0, x(T) = 1,$$ <br>
